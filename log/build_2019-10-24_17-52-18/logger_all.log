@@ -1,0 +1,85 @@
+[0.213s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install', '--packages-select', 'rplidar_ros']
+[0.213s] DEBUG:colcon:Parsed command line arguments: Namespace(ament_cmake_args=None, base_paths='.', build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base='log', log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f7b1b502b38>>, merge_install=False, metas='./colcon.meta', packages_above=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=['rplidar_ros'], packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, parallel_workers=2, paths=None, symlink_install=True, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f7b1b502b38>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f7b1b502e48>)
+[0.268s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.269s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.269s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.269s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.269s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.269s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/ros/ros2_ws/src/rplidar_ros2'
+[0.270s] Level 1:colcon.colcon_core.package_identification:_identify(/home/ros/ros2_ws/src/rplidar_ros2) by extensions ['ignore', 'ignore_ament_install']
+[0.270s] Level 1:colcon.colcon_core.package_identification:_identify(/home/ros/ros2_ws/src/rplidar_ros2) by extension 'ignore'
+[0.270s] Level 1:colcon.colcon_core.package_identification:_identify(/home/ros/ros2_ws/src/rplidar_ros2) by extension 'ignore_ament_install'
+[0.270s] Level 1:colcon.colcon_core.package_identification:_identify(/home/ros/ros2_ws/src/rplidar_ros2) by extensions ['colcon_pkg']
+[0.270s] Level 1:colcon.colcon_core.package_identification:_identify(/home/ros/ros2_ws/src/rplidar_ros2) by extension 'colcon_pkg'
+[0.270s] Level 1:colcon.colcon_core.package_identification:_identify(/home/ros/ros2_ws/src/rplidar_ros2) by extensions ['colcon_meta']
+[0.270s] Level 1:colcon.colcon_core.package_identification:_identify(/home/ros/ros2_ws/src/rplidar_ros2) by extension 'colcon_meta'
+[0.270s] Level 1:colcon.colcon_core.package_identification:_identify(/home/ros/ros2_ws/src/rplidar_ros2) by extensions ['ros']
+[0.271s] Level 1:colcon.colcon_core.package_identification:_identify(/home/ros/ros2_ws/src/rplidar_ros2) by extension 'ros'
+[0.290s] DEBUG:colcon.colcon_core.package_identification:Package '/home/ros/ros2_ws/src/rplidar_ros2' with type 'ros.ament_cmake' and name 'rplidar_ros'
+[0.290s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.299s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'cmake_args' from command line to 'None'
+[0.299s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'cmake_target' from command line to 'None'
+[0.299s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.299s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'cmake_clean_cache' from command line to 'False'
+[0.299s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'cmake_clean_first' from command line to 'False'
+[0.299s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'cmake_force_configure' from command line to 'False'
+[0.299s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'ament_cmake_args' from command line to 'None'
+[0.299s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'catkin_cmake_args' from command line to 'None'
+[0.299s] Level 5:colcon.colcon_core.verb:set package 'rplidar_ros' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.299s] DEBUG:colcon.colcon_core.verb:Building package 'rplidar_ros' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ros/ros2_ws/src/rplidar_ros2/build/rplidar_ros', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ros/ros2_ws/src/rplidar_ros2/install/rplidar_ros', 'merge_install': False, 'path': '/home/ros/ros2_ws/src/rplidar_ros2', 'symlink_install': True, 'test_result_base': None}
+[0.301s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.302s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.302s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ros/ros2_ws/src/rplidar_ros2' with build type 'ament_cmake'
+[0.308s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.309s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ros/ros2_ws/src/rplidar_ros2'
+[0.310s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.310s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.314s] DEBUG:colcon.colcon_core.shell:Ignoring prefix path '/opt/ros/dashing'
+[0.314s] DEBUG:colcon.colcon_core.shell:Ignoring prefix path '/home/ros/pibot_ros/ros_ws/devel'
+[0.314s] DEBUG:colcon.colcon_core.shell:Ignoring prefix path '/home/ros/catkin_ws/devel'
+[0.314s] DEBUG:colcon.colcon_core.shell:Ignoring prefix path '/opt/ros/melodic'
+[0.324s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ros/ros2_ws/src/rplidar_ros2/build/rplidar_ros': CMAKE_PREFIX_PATH=/home/ros/ros2_ws/install/rplidar_ros:/home/ros/ros2_ws/install/omni_ros2:/home/ros/ros2_ws/install/ydlidar:/home/ros/ros2_ws/install/robot_localization:/home/ros/ros2_ws/install/joint_state_publisher:/opt/ros/dashing:/home/ros/pibot_ros/ros_ws/devel:/home/ros/catkin_ws/devel:/opt/ros/melodic /usr/bin/cmake /home/ros/ros2_ws/src/rplidar_ros2 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ros/ros2_ws/src/rplidar_ros2/install/rplidar_ros
+[3.198s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ros/ros2_ws/src/rplidar_ros2/build/rplidar_ros' returned '0': CMAKE_PREFIX_PATH=/home/ros/ros2_ws/install/rplidar_ros:/home/ros/ros2_ws/install/omni_ros2:/home/ros/ros2_ws/install/ydlidar:/home/ros/ros2_ws/install/robot_localization:/home/ros/ros2_ws/install/joint_state_publisher:/opt/ros/dashing:/home/ros/pibot_ros/ros_ws/devel:/home/ros/catkin_ws/devel:/opt/ros/melodic /usr/bin/cmake /home/ros/ros2_ws/src/rplidar_ros2 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ros/ros2_ws/src/rplidar_ros2/install/rplidar_ros
+[3.203s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ros/ros2_ws/src/rplidar_ros2/build/rplidar_ros': CMAKE_PREFIX_PATH=/home/ros/ros2_ws/install/rplidar_ros:/home/ros/ros2_ws/install/omni_ros2:/home/ros/ros2_ws/install/ydlidar:/home/ros/ros2_ws/install/robot_localization:/home/ros/ros2_ws/install/joint_state_publisher:/opt/ros/dashing:/home/ros/pibot_ros/ros_ws/devel:/home/ros/catkin_ws/devel:/opt/ros/melodic /usr/bin/cmake --build /home/ros/ros2_ws/src/rplidar_ros2/build/rplidar_ros -- -j2 -l2
+[20.253s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ros/ros2_ws/src/rplidar_ros2/build/rplidar_ros' returned '0': CMAKE_PREFIX_PATH=/home/ros/ros2_ws/install/rplidar_ros:/home/ros/ros2_ws/install/omni_ros2:/home/ros/ros2_ws/install/ydlidar:/home/ros/ros2_ws/install/robot_localization:/home/ros/ros2_ws/install/joint_state_publisher:/opt/ros/dashing:/home/ros/pibot_ros/ros_ws/devel:/home/ros/catkin_ws/devel:/opt/ros/melodic /usr/bin/cmake --build /home/ros/ros2_ws/src/rplidar_ros2/build/rplidar_ros -- -j2 -l2
+[20.311s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ros/ros2_ws/src/rplidar_ros2/build/rplidar_ros': CMAKE_PREFIX_PATH=/home/ros/ros2_ws/install/rplidar_ros:/home/ros/ros2_ws/install/omni_ros2:/home/ros/ros2_ws/install/ydlidar:/home/ros/ros2_ws/install/robot_localization:/home/ros/ros2_ws/install/joint_state_publisher:/opt/ros/dashing:/home/ros/pibot_ros/ros_ws/devel:/home/ros/catkin_ws/devel:/opt/ros/melodic /usr/bin/cmake --build /home/ros/ros2_ws/src/rplidar_ros2/build/rplidar_ros --target install -- -j2 -l2
+[20.976s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rplidar_ros)
+[20.978s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ros/ros2_ws/src/rplidar_ros2/build/rplidar_ros' returned '0': CMAKE_PREFIX_PATH=/home/ros/ros2_ws/install/rplidar_ros:/home/ros/ros2_ws/install/omni_ros2:/home/ros/ros2_ws/install/ydlidar:/home/ros/ros2_ws/install/robot_localization:/home/ros/ros2_ws/install/joint_state_publisher:/opt/ros/dashing:/home/ros/pibot_ros/ros_ws/devel:/home/ros/catkin_ws/devel:/opt/ros/melodic /usr/bin/cmake --build /home/ros/ros2_ws/src/rplidar_ros2/build/rplidar_ros --target install -- -j2 -l2
+[20.992s] Level 1:colcon.colcon_core.environment:checking '/home/ros/ros2_ws/src/rplidar_ros2/install/rplidar_ros' for CMake module files
+[20.993s] Level 1:colcon.colcon_core.environment:checking '/home/ros/ros2_ws/src/rplidar_ros2/install/rplidar_ros' for CMake config files
+[20.993s] Level 1:colcon.colcon_core.shell:create_environment_hook('rplidar_ros', 'cmake_prefix_path')
+[20.994s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros/ros2_ws/src/rplidar_ros2/install/rplidar_ros/share/rplidar_ros/hook/cmake_prefix_path.ps1'
+[20.995s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ros/ros2_ws/src/rplidar_ros2/install/rplidar_ros/share/rplidar_ros/hook/cmake_prefix_path.dsv'
+[20.996s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros/ros2_ws/src/rplidar_ros2/install/rplidar_ros/share/rplidar_ros/hook/cmake_prefix_path.sh'
+[20.998s] Level 1:colcon.colcon_core.environment:checking '/home/ros/ros2_ws/src/rplidar_ros2/install/rplidar_ros/lib'
+[21.000s] Level 1:colcon.colcon_core.shell:create_environment_hook('rplidar_ros', 'ld_library_path_lib')
+[21.001s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros/ros2_ws/src/rplidar_ros2/install/rplidar_ros/share/rplidar_ros/hook/ld_library_path_lib.ps1'
+[21.002s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ros/ros2_ws/src/rplidar_ros2/install/rplidar_ros/share/rplidar_ros/hook/ld_library_path_lib.dsv'
+[21.002s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ros/ros2_ws/src/rplidar_ros2/install/rplidar_ros/share/rplidar_ros/hook/ld_library_path_lib.sh'
+[21.003s] Level 1:colcon.colcon_core.environment:checking '/home/ros/ros2_ws/src/rplidar_ros2/install/rplidar_ros/bin'
+[21.003s] Level 1:colcon.colcon_core.environment:checking '/home/ros/ros2_ws/src/rplidar_ros2/install/rplidar_ros/lib/pkgconfig/rplidar_ros.pc'
+[21.003s] Level 1:colcon.colcon_core.environment:checking '/home/ros/ros2_ws/src/rplidar_ros2/install/rplidar_ros/lib/python3.6/site-packages'
+[21.004s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros/ros2_ws/src/rplidar_ros2/install/rplidar_ros/share/rplidar_ros/package.ps1'
+[21.005s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ros/ros2_ws/src/rplidar_ros2/install/rplidar_ros/share/rplidar_ros/package.dsv'
+[21.006s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros/ros2_ws/src/rplidar_ros2/install/rplidar_ros/share/rplidar_ros/package.sh'
+[21.008s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros/ros2_ws/src/rplidar_ros2/install/rplidar_ros/share/rplidar_ros/package.bash'
+[21.009s] INFO:colcon.colcon_core.shell:Creating package script '/home/ros/ros2_ws/src/rplidar_ros2/install/rplidar_ros/share/rplidar_ros/package.zsh'
+[21.011s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ros/ros2_ws/src/rplidar_ros2/install/rplidar_ros/share/colcon-core/packages/rplidar_ros)
+[21.012s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[21.013s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[21.013s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[21.013s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[21.055s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[21.055s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[21.055s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[21.067s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[21.069s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ros/ros2_ws/src/rplidar_ros2/install/local_setup.ps1'
+[21.071s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ros/ros2_ws/src/rplidar_ros2/install/_local_setup_util_ps1.py'
+[21.074s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ros/ros2_ws/src/rplidar_ros2/install/setup.ps1'
+[21.108s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ros/ros2_ws/src/rplidar_ros2/install/local_setup.sh'
+[21.110s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ros/ros2_ws/src/rplidar_ros2/install/_local_setup_util_sh.py'
+[21.111s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ros/ros2_ws/src/rplidar_ros2/install/setup.sh'
+[21.116s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ros/ros2_ws/src/rplidar_ros2/install/local_setup.bash'
+[21.117s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ros/ros2_ws/src/rplidar_ros2/install/setup.bash'
+[21.121s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ros/ros2_ws/src/rplidar_ros2/install/local_setup.zsh'
+[21.122s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ros/ros2_ws/src/rplidar_ros2/install/setup.zsh'

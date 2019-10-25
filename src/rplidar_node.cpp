@@ -45,7 +45,7 @@ rplidar_node::rplidar_node(rclcpp::NodeOptions options)
   this->get_parameter_or("channel_type", channel_type_, std::string("serial"));
   this->get_parameter_or("tcp_ip", tcp_ip_, std::string("192.168.0.7"));
   this->get_parameter_or("tcp_port", tcp_port_, 20108);
-  this->get_parameter_or("serial_port", serial_port_, std::string("/dev/ttyUSB0"));
+  this->get_parameter_or("serial_port", serial_port_, std::string("/dev/rplidar"));
   this->get_parameter_or("serial_baudrate", serial_baudrate_, 115200);
   this->get_parameter_or("frame_id", frame_id_, std::string("laser_frame"));
   this->get_parameter_or("inverted", inverted_, false);
