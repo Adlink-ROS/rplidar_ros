@@ -60,8 +60,11 @@ RPlidarNode::RPlidarNode(const std::string & name, const rclcpp::NodeOptions & o
   frame_id_("laser_frame"),
   inverted_(false),
   angle_compensate_(true),
+  min_distance_(0.15),
   max_distance_(8.0),
   scan_mode_(""),
+  angle_min_(0.0f),
+  angle_max_(359.0f),
   angle_compensate_multiple_(1)  // Angle compensate at per 1 degree
 {
   declare_parameters();
@@ -103,8 +106,11 @@ void RPlidarNode::declare_parameters()
   declare_parameter<std::string>("frame_id", frame_id_);
   declare_parameter<bool>("inverted", inverted_);
   declare_parameter<bool>("angle_compensate", angle_compensate_);
+  declare_parameter<double>("min_distance", min_distance_);
   declare_parameter<double>("max_distance", max_distance_);
   declare_parameter<std::string>("scan_mode", scan_mode_);
+  declare_parameter<float>("angle_min", angle_min_);
+  declare_parameter<float>("angle_max", angle_max_);
 }
 
 void RPlidarNode::get_parameters()
@@ -118,8 +124,11 @@ void RPlidarNode::get_parameters()
   get_parameter<std::string>("frame_id", frame_id_);
   get_parameter<bool>("inverted", inverted_);
   get_parameter<bool>("angle_compensate", angle_compensate_);
+  get_parameter<double>("min_distance", min_distance_);
   get_parameter<double>("max_distance", max_distance_);
   get_parameter<std::string>("scan_mode", scan_mode_);
+  get_parameter<float>("angle_min", angle_min_);
+  get_parameter<float>("angle_max", angle_max_);
 }
 
 void RPlidarNode::connect_driver()
@@ -216,8 +225,9 @@ void RPlidarNode::check_scan_mode()
     }
     max_distance_ = current_scan_mode.max_distance;
     RCLCPP_INFO(get_logger(),
-      "Current scan mode: %s, max_distance: %.1f m, Point number: %.1fK , angle_compensate: %d",
+      "Current scan mode: %s, min_distance: %.1f m, max_distance: %.1f m, Point number: %.1fK , angle_compensate: %d",
       current_scan_mode.scan_mode,
+      min_distance_,
       current_scan_mode.max_distance, (1000 / current_scan_mode.us_per_sample),
       angle_compensate_multiple_);
   } else {
@@ -316,8 +326,8 @@ void RPlidarNode::spin()
 
   if (op_result == RESULT_OK) {
     op_result = driver_->ascendScanData(nodes, count);
-    float angle_min = DEG2RAD(0.0f);
-    float angle_max = DEG2RAD(359.0f);
+    float angle_min = DEG2RAD(angle_min_);
+    float angle_max = DEG2RAD(angle_max_);
 
     if (op_result == RESULT_OK) {
       if (angle_compensate_) {
@@ -394,7 +404,7 @@ void RPlidarNode::publish_scan(
 
   scan_msg.scan_time = scan_time;
   scan_msg.time_increment = scan_time / (double)(node_count - 1);
-  scan_msg.range_min = 0.15;
+  scan_msg.range_min = min_distance_;
   scan_msg.range_max = max_distance_;
 
   scan_msg.intensities.resize(node_count);

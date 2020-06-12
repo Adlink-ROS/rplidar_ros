@@ -99,9 +99,15 @@ private:
 
   bool inverted_;
 
+  float angle_min_;
+  
+  float angle_max_;
+
   bool angle_compensate_;
 
   double max_distance_;
+
+  double min_distance_;
 
   std::string scan_mode_;
 
