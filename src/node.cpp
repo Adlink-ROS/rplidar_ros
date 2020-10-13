@@ -52,7 +52,7 @@ void publish_scan(ros::Publisher *pub,
                   size_t node_count, ros::Time start,
                   double scan_time, bool inverted,
                   float angle_min, float angle_max,
-                  float max_distance,
+                  float min_distance, float max_distance,
                   std::string frame_id)
 {
     static int scan_count = 0;
@@ -75,7 +75,7 @@ void publish_scan(ros::Publisher *pub,
 
     scan_msg.scan_time = scan_time;
     scan_msg.time_increment = scan_time / (double)(node_count-1);
-    scan_msg.range_min = 0.15;
+    scan_msg.range_min = min_distance;
     scan_msg.range_max = max_distance;//8.0;
 
     scan_msg.intensities.resize(node_count);
@@ -187,6 +187,7 @@ int main(int argc, char * argv[]) {
     std::string frame_id;
     bool inverted = false;
     bool angle_compensate = true;
+    float min_distance = 0.15;
     float max_distance = 8.0;
     int angle_compensate_multiple = 1;//it stand of angle compensate at per 1 degree
     std::string scan_mode;
@@ -199,6 +200,7 @@ int main(int argc, char * argv[]) {
     nh_private.param<bool>("inverted", inverted, false);
     nh_private.param<bool>("angle_compensate", angle_compensate, false);
     nh_private.param<std::string>("scan_mode", scan_mode, std::string());
+    nh_private.param<float>("min_distance", min_distance, 0.15);
 
     ROS_INFO("RPLIDAR running on ROS package rplidar_ros. SDK Version:"RPLIDAR_SDK_VERSION"");
 
@@ -254,8 +256,8 @@ int main(int argc, char * argv[]) {
             if (selectedScanMode == _u16(-1)) {
                 ROS_ERROR("scan mode `%s' is not supported by lidar, supported modes:", scan_mode.c_str());
                 for (std::vector<RplidarScanMode>::iterator iter = allSupportedScanModes.begin(); iter != allSupportedScanModes.end(); iter++) {
-                    ROS_ERROR("\t%s: max_distance: %.1f m, Point number: %.1fK",  iter->scan_mode,
-                            iter->max_distance, (1000/iter->us_per_sample));
+                    ROS_ERROR("\t%s: min_distance: %.1f m, max_distance: %.1f m, Point number: %.1fK", 
+				    iter->scan_mode, iter->min_distance, iter->max_distance, (1000/iter->us_per_sample));
                 }
                 op_result = RESULT_OPERATION_FAIL;
             } else {
@@ -271,8 +273,8 @@ int main(int argc, char * argv[]) {
         if(angle_compensate_multiple < 1) 
           angle_compensate_multiple = 1;
         max_distance = current_scan_mode.max_distance;
-        ROS_INFO("current scan mode: %s, max_distance: %.1f m, Point number: %.1fK , angle_compensate: %d",  current_scan_mode.scan_mode,
-                 current_scan_mode.max_distance, (1000/current_scan_mode.us_per_sample), angle_compensate_multiple);
+        ROS_INFO("current scan mode: %s, min_distance: %.1f m, max_distance: %.1f m, Point number: %.1fK , angle_compensate: %d",  current_scan_mode.scan_mode,
+                 min_distance, current_scan_mode.max_distance, (1000/current_scan_mode.us_per_sample), angle_compensate_multiple);
     }
     else
     {
@@ -317,7 +319,7 @@ int main(int argc, char * argv[]) {
   
                     publish_scan(&scan_pub, angle_compensate_nodes, angle_compensate_nodes_count,
                              start_scan_time, scan_duration, inverted,
-                             angle_min, angle_max, max_distance,
+                             angle_min, angle_max, min_distance, max_distance,
                              frame_id);
                 } else {
                     int start_node = 0, end_node = 0;
@@ -334,7 +336,7 @@ int main(int argc, char * argv[]) {
 
                     publish_scan(&scan_pub, &nodes[start_node], end_node-start_node +1,
                              start_scan_time, scan_duration, inverted,
-                             angle_min, angle_max, max_distance,
+                             angle_min, angle_max, min_distance, max_distance,
                              frame_id);
                }
             } else if (op_result == RESULT_OPERATION_FAIL) {
@@ -344,7 +346,7 @@ int main(int argc, char * argv[]) {
 
                 publish_scan(&scan_pub, nodes, count,
                              start_scan_time, scan_duration, inverted,
-                             angle_min, angle_max, max_distance,
+                             angle_min, angle_max, min_distance, max_distance,
                              frame_id);
             }
         }

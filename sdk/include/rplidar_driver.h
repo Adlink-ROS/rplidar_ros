@@ -55,6 +55,7 @@ namespace rp { namespace standalone{ namespace rplidar {
 struct RplidarScanMode {
     _u16    id;
     float   us_per_sample;   // microseconds per sample
+    float   min_distance;    // min distance
     float   max_distance;    // max distance
     _u8     ans_type;         // the answer type of the scam mode, its value should be RPLIDAR_ANS_TYPE_MEASUREMENT*
     char    scan_mode[64];    // name of scan mode, max 63 characters
