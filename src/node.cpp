@@ -202,7 +202,7 @@ int main(int argc, char * argv[]) {
     nh_private.param<std::string>("scan_mode", scan_mode, std::string());
     nh_private.param<float>("min_distance", min_distance, 0.15);
 
-    ROS_INFO("RPLIDAR running on ROS package rplidar_ros. SDK Version:"RPLIDAR_SDK_VERSION"");
+    ROS_INFO("RPLIDAR running on ROS package rplidar_ros. SDK Version:\"RPLIDAR_SDK_VERSION\"");
 
     u_result     op_result;
 
